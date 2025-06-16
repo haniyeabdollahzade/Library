@@ -13,6 +13,7 @@ def main():
         print("6.remove book")
         print("7.borrwe book ")
         print("8.show barrowed books")
+        print("9.Search Book")
         print("0.exit")
         print("=====================================")
 
@@ -54,8 +55,10 @@ def main():
 
         elif choice == '8':
             library.show_barrowed_books()
-            library.save_book_to_json()        
-                    
+            library.save_book_to_json()  
+
+        elif choice == '9':
+            library.search_book()
 
         elif choice == '0':
             

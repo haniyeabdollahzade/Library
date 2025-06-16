@@ -54,6 +54,9 @@ class Library:
         self.load_book_from_json()
         self.load_member_from_json()
 
+# ========================================== Books ===================================================
+
+
     def add_book(self, id, title, author, isbn):
         self.books.append(Book(id=id, title=title, author=author, isbn=isbn))
         print(f"{title} book has been successfully added to the book list.\n")
@@ -67,12 +70,13 @@ class Library:
             print(f"{i}. {book.title} by {book.author} (ID: {book.id})")  
 
     def remove_book(self):
-        if not self.books:
-            print("Not books avaliable.\n")        
-            return
+        # if not self.books:
+        #     print("Not books avaliable.\n")        
+        #     return
         
-        for i , book in enumerate(self.books, start=1):
-            print(f"{i}. {book.title} - {book.author} - ID: {book.id}")
+        # for i , book in enumerate(self.books, start=1):
+        #     print(f"{i}. {book.title} - {book.author} - ID: {book.id}")
+        self.show_books()
 
         try:
             del_book = input('Enter ID of the book remove: ').strip()
@@ -165,9 +169,27 @@ class Library:
                 print(f"- Book with ID {book_id} not found in current book list.\n")
 
         if not any_barrowed:
-            print("No books have been barrowed yet.\n")            
+            print("No books have been barrowed yet.\n")  
+
+    def search_book(self):
+        if not self.books:
+            print("No Books available.\n") 
+            return
+        
+        title_book = input("Enter the book title: ")
+        searched_book = None
+
+        for book in self.books:
+            if str(book.title.lower()) == title_book.lower():
+                searched_book = book
+                break
+        if not searched_book.is_barrower:    
+            print(f"{searched_book.title} -Author: {searched_book.author} - ID: {searched_book.id} - is  available.\n")
+        else:
+            print(f"{searched_book.title} -Author: {searched_book.author} - ID: {searched_book.id} - is already barrowed.\n")
 
 
+# ========================================== Members ===================================================
     def regestration_member(self, id, name):
         self.members.append(Member(id=id, name=name))
         print(f"{name} was added to the member list.\n")
