@@ -180,7 +180,7 @@ class Library:
         searched_book = None
 
         for book in self.books:
-            if str(book.title.lower()) == title_book.lower():
+            if book.title.lower() == title_book.lower():
                 searched_book = book
                 break
         if not searched_book.is_barrower:    
@@ -198,7 +198,7 @@ class Library:
    
     def show_members(self):
         if not self.members:
-            print('the member list is empty.\n')
+            print('no members registered.\n')
             return
         for i,member in enumerate(self.members, start=1):
             print(f"{i}. {member.name} - ID:{member.id}")
@@ -229,6 +229,22 @@ class Library:
             print("Please enter a valid ID.")            
                     
         self.save_member_to_json()
+
+    def search_member(self):
+        if not self.members:
+            print("no members registered.\n")
+            return
+        
+        name_member = input("Enter the name member: ")
+        searched_member = None
+
+        for member in self.members:
+            if member.name.lower() == name_member.lower():
+                searched_member = member
+                break
+
+        print(f"{searched_member.name} - ID: {searched_member.id}")    
+
 
 
 # ========================== save data to json =====================================================

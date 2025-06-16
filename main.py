@@ -14,6 +14,7 @@ def main():
         print("7.borrwe book ")
         print("8.show barrowed books")
         print("9.Search Book")
+        print("10. Search Member")
         print("0.exit")
         print("=====================================")
 
@@ -59,6 +60,9 @@ def main():
 
         elif choice == '9':
             library.search_book()
+
+        elif choice == '10':
+            library.search_member()    
 
         elif choice == '0':
             

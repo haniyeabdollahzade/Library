@@ -1,1 +1,1 @@
-[{"id": "102", "title": "harry patter", "author": "Rowling", "isbn": "2345", "is_barrower": true}, {"id": "101", "title": "1984", "author": "George Orwell", "isbn": "1234", "is_barrower": true}, {"id": "103", "title": "Animal Farm", "author": "George Orwell", "isbn": "6543", "is_barrower": false}]
+[{"id": "101", "title": "1984", "author": "George Orwell", "isbn": "1234", "is_barrower": false}, {"id": "102", "title": "Animal Farm", "author": "George Orwell", "isbn": "4567", "is_barrower": false}]
